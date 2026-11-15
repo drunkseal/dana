@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimental Facilities &amp; Metrology | DANA Aerodynamics Laboratory</title>
+  <meta name="description" content="Technical specifications of the DANA Subsonic Wind Tunnel (60 m/s, 2x1x1m), 80-channel DPS pressure scanner, CTA hotwire anemometry, and dynamic force balances at Amirkabir University of Technology.">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+  <div class="grid-pattern"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="./index.html" class="nav-brand">
+        <div class="nav-logo-box">
+          <img src="./assets/images/dana_logo.png" alt="DANA Lab Logo">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">
+            DANA LAB
+            <img src="./assets/images/aut_logo.png" alt="AUT Logo" style="width: 20px; height: 20px; opacity: 0.85;" title="Amirkabir University of Technology">
+          </span>
+          <span class="brand-affiliation">Amirkabir University of Technology</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">&larr; Back to Lab Portal</a></li>
+          <li><a href="#tunnel" class="nav-link active">Wind Tunnel</a></li>
+          <li><a href="#metrology" class="nav-link">Metrology</a></li>
+          <li><a href="#visualization" class="nav-link">Flow Visualization</a></li>
+          <li><a href="#prototyping" class="nav-link">Prototyping</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="./index.html#contact" class="btn btn-primary btn-sm">Book Testing &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px;">
+    <!-- Facility Header -->
+    <section class="section-py" id="tunnel">
+      <div class="container">
+        <div class="section-badge">Aerodynamic Testing Facility</div>
+        <h1 style="font-size: 3rem; margin-bottom: 1.25rem;">
+          DANA Subsonic Wind Tunnel <span class="text-gradient">&amp; Metrology Suite</span>
+        </h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 900px; line-height: 1.7; margin-bottom: 2.5rem;">
+          Established in August 2012 at the Department of Aerospace Engineering, Amirkabir University of Technology. A research-grade aerodynamic testing infrastructure designed for high Reynolds number subsonic flow investigations, low turbulence level, and precision diagnostics.
+        </p>
+
+        <!-- Big Tunnel Photo & Technical Specs -->
+        <div class="facility-feature" style="margin-bottom: 3rem;">
+          <div class="facility-img-box" style="height: 440px;">
+            <img src="./assets/images/wind_tunnel_facility.png" alt="DANA Subsonic Wind Tunnel">
+          </div>
+          <div>
+            <span class="section-badge" style="margin-bottom: 0.5rem;">Core Testing Rig</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Tunnel Architectural Specifications</h2>
+            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.5rem;">
+              The DANA wind tunnel is an open-circuit, suction-type subsonic aerodynamic facility. Air enters through a bell-mouth intake and settling chamber equipped with high-porosity honeycombs and anti-turbulence damping screens. A 9:1 aerodynamic contraction nozzle delivers a highly uniform flow with exceptional flow angularity stability and turbulence intensity under 0.1%.
+            </p>
+
+            <div class="facility-specs-list">
+              <div class="facility-spec-item">
+                <div class="facility-spec-title">Test Section Volume</div>
+                <div class="facility-spec-value">2.0 × 1.0 × 1.0 m</div>
+              </div>
+              <div class="facility-spec-item">
+                <div class="facility-spec-title">Velocity Range</div>
+                <div class="facility-spec-value">0 – 60 m/s (216 km/h)</div>
+              </div>
+              <div class="facility-spec-item">
+                <div class="facility-spec-title">Turbulence Level</div>
+                <div class="facility-spec-value">&lt; 0.1 %</div>
+              </div>
+              <div class="facility-spec-item">
+                <div class="facility-spec-title">Contraction Ratio</div>
+                <div class="facility-spec-value">9 : 1 Nozzle</div>
+              </div>
+              <div class="facility-spec-item">
+                <div class="facility-spec-title">Circuit Type</div>
+                <div class="facility-spec-value">Open-Circuit Suction</div>
+              </div>
+              <div class="facility-spec-item">
+                <div class="facility-spec-title">Drive Fan</div>
+                <div class="facility-spec-value">Axial Multi-Blade VFD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Metrology Section -->
+        <div id="metrology" style="margin-top: 4rem;">
+          <div class="section-badge">Precision Diagnostic Metrology</div>
+          <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Sensory Instrumentation Systems</h2>
+
+          <div class="instruments-grid" style="margin-bottom: 3.5rem;">
+            <!-- Hotwire Anemometry -->
+            <div class="instrument-card">
+              <div class="instrument-thumb" style="height: 220px;">
+                <img src="./assets/images/hotwire_probes.png" alt="CTA Hotwire Probes">
+              </div>
+              <div class="instrument-body">
+                <h3 class="instrument-title">Constant Temperature Hotwire Anemometer</h3>
+                <p class="instrument-desc">
+                  High-bandwidth CTA velocity anemometer measuring flow velocities from 0 to 100 m/s with ±0.01 m/s accuracy. Captures velocity fluctuations up to 2 kHz without analog signal degradation.
+                </p>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto;">
+                  • 0–100 m/s range<br>• 2 kHz turbulence frequency<br>• Temperature compensation
+                </div>
+              </div>
+            </div>
+
+            <!-- 80-Channel DPS -->
+            <div class="instrument-card">
+              <div class="instrument-thumb" style="height: 220px;">
+                <img src="./assets/images/dps_80channel_box.png" alt="80-Channel DPS Scanner">
+              </div>
+              <div class="instrument-body">
+                <h3 class="instrument-title">80-Channel DPS Pressure Acquisition</h3>
+                <p class="instrument-desc">
+                  Synchronous multi-channel differential pressure scanning box equipped with 5, 12.5, 25, and 69 mbar transducers. Measurement error &lt; 0.1% full scale.
+                </p>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto;">
+                  • 80 Simultaneous Ports<br>• 5, 12.5, 25, 69 mbar spans<br>• &lt;0.1% FS accuracy
+                </div>
+              </div>
+            </div>
+
+            <!-- Load Balances -->
+            <div class="instrument-card">
+              <div class="instrument-thumb" style="height: 220px;">
+                <img src="./assets/images/balance_3component.png" alt="Aerodynamic Balances">
+              </div>
+              <div class="instrument-body">
+                <h3 class="instrument-title">3 &amp; 6-Component Aerodynamic Balances</h3>
+                <p class="instrument-desc">
+                  External 3-component balance for lift, drag (0–100 N), and pitching moment (0–2.5 N.m). Dynamic 6-component internal balance for forces up to 300 N in X, Y, Z.
+                </p>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto;">
+                  • Lift &amp; Drag: 0–100 N<br>• 6-DOF Dynamic: 0–300 N<br>• Pitching, Rolling, Yawing
+                </div>
+              </div>
+            </div>
+
+            <!-- Traversing System -->
+            <div class="instrument-card">
+              <div class="instrument-thumb" style="height: 220px;">
+                <img src="./assets/images/traversing_system.png" alt="3D Traversing System">
+              </div>
+              <div class="instrument-body">
+                <h3 class="instrument-title">Automated 3-Axis Cartesian Traversal</h3>
+                <p class="instrument-desc">
+                  Computer-controlled 3D traversing mechanism allowing automated probe scanning across the test section with 1 mm spatial accuracy in X, Y, and Z axes.
+                </p>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto;">
+                  • 3-Axis CNC Control<br>• 1 mm spatial precision<br>• Automated boundary survey
+                </div>
+              </div>
+            </div>
+
+            <!-- Alpha Mechanism -->
+            <div class="instrument-card">
+              <div class="instrument-thumb" style="height: 220px;">
+                <img src="./assets/images/alpha_mechanism.png" alt="Alpha Mechanism">
+              </div>
+              <div class="instrument-body">
+                <h3 class="instrument-title">Precision Model Alpha Mechanism</h3>
+                <p class="instrument-desc">
+                  Rotational pitch actuator enabling remote, continuous angle-of-attack adjustment from -20° to +35° with 0.1° positioning accuracy.
+                </p>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto;">
+                  • 0.1° angular resolution<br>• Dynamic oscillation mode<br>• Heavy model support
+                </div>
+              </div>
+            </div>
+
+            <!-- Rapid Prototyping -->
+            <div class="instrument-card" id="prototyping">
+              <div class="instrument-thumb" style="height: 220px;">
+                <img src="./assets/images/fdm_3d_printer.jpg" alt="FDM 3D Printer">
+              </div>
+              <div class="instrument-body">
+                <h3 class="instrument-title">FDM Aerodynamic Model Prototyping</h3>
+                <p class="instrument-desc">
+                  Large-format FDM additive manufacturing system fabricating aerodynamic models up to 45 × 30 × 42 cm with 100 µm layer resolution in PLA and ABS.
+                </p>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto;">
+                  • 45 × 30 × 42 cm build volume<br>• 100 µm precision<br>• Integrated pressure taps
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flow Visualization Suite -->
+        <div id="visualization" style="margin-top: 4rem;">
+          <div class="section-badge">Optical Diagnostic Capabilities</div>
+          <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Flow Visualization Techniques</h2>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden;">
+              <img src="./assets/images/flow_viz_smoke_tunnel.jpg" alt="Smoke Tunnel Visualization" style="width: 100%; height: 220px; object-fit: cover;">
+              <div style="padding: 1.5rem;">
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Smoke Streamline Visualization</h3>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                  Vaporized paraffin smoke wire injecting multi-filament streaklines to track leading-edge vortex formation, stall inception, and wake shedding.
+                </p>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden;">
+              <img src="./assets/images/flow_viz_oil_surface.png" alt="Oil Surface Visualization" style="width: 100%; height: 220px; object-fit: cover;">
+              <div style="padding: 1.5rem;">
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Surface Oil Flow Visualization</h3>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                  Titanium dioxide and paraffin oil mixture tracing skin friction lines, separation lines, attachment nodes, and three-dimensional stall cells.
+                </p>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden;">
+              <img src="./assets/images/flow_viz_fluorescent_uv.jpg" alt="Fluorescent UV Visualization" style="width: 100%; height: 220px; object-fit: cover;">
+              <div style="padding: 1.5rem;">
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Fluorescent Particles &amp; UV Illumination</h3>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                  Microscopic fluorescent tracer particles illuminated under high-intensity ultraviolet light for high-contrast boundary layer jet velocity mapping.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing Services Banner -->
+        <div class="join-banner" style="margin-top: 4rem;">
+          <div class="join-text-group">
+            <h3 class="join-title">Industrial &amp; Academic Testing Services</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              DANA Laboratory provides calibrated wind tunnel testing, CFD aerodynamic characterization, and sensor development for aerospace, automotive, marine, and energy partners.
+            </p>
+          </div>
+          <a href="./index.html#contact" class="btn btn-primary">Request Testing Proposal &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2012–2026 DANA Aerodynamics Laboratory, Amirkabir University of Technology.</div>
+      <div><a href="./index.html" class="text-cyan">&larr; Return to Lab Portal</a></div>
+    </div>
+  </footer>
+</body>
+</html>

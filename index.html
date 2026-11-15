@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DANA Laboratory | Numerical, Experimental & ML Aerodynamics</title>
+  <meta name="description" content="DANA Aerodynamics Laboratory at Amirkabir University of Technology. Research in GPU-accelerated CFD, high-order spectral methods, wind tunnel diagnostics, and physics-informed machine learning.">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="DANA Laboratory | Aerodynamics & Fluid Mechanics">
+  <meta property="og:description" content="Pioneering research in GPU CFD, subsonic wind tunnel diagnostics, and machine learning fluid mechanics.">
+  <meta property="og:image" content="./assets/opendynamo/flow_visualization_final.png">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <!-- Ambient Atmosphere -->
+  <div class="ambient-glow"></div>
+  <div class="grid-pattern"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="./index.html" class="nav-brand">
+        <div class="nav-logo-box">
+          <img src="./assets/images/dana_logo.png" alt="DANA Lab Logo">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">
+            DANA LAB
+            <img src="./assets/images/aut_logo.png" alt="AUT Logo" style="width: 20px; height: 20px; opacity: 0.85;" title="Amirkabir University of Technology">
+          </span>
+          <span class="brand-affiliation">Amirkabir University of Technology</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#pillars" class="nav-link">Pillars</a></li>
+          <li><a href="#opendynamo" class="nav-link">OpenDynamo</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#facilities" class="nav-link">Facilities</a></li>
+          <li><a href="#benchmark" class="nav-link">Validation</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#team" class="nav-link">People</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle Color Theme" title="Toggle Dark/Light Mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- GitHub Repo Link -->
+        <a href="https://github.com/drunkseal/dana" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Repository" title="GitHub Repository">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="btn-icon mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="section-badge">
+            <span class="sim-indicator"></span>
+            DANA Aerodynamics Laboratory • Tehran Polytechnic
+          </div>
+          <h1 class="hero-title">
+            Engineering the Physics of <span class="text-gradient">Fluid Dynamics</span>
+          </h1>
+          <p class="hero-desc">
+            Bridging high-order GPU spectral-element simulation, precision subsonic wind tunnel diagnostics, and physics-informed machine learning to decode complex aerodynamic phenomena.
+          </p>
+
+          <div class="hero-badges-row">
+            <span class="hero-badge-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              Subsonic Wind Tunnel (60 m/s)
+            </span>
+            <span class="hero-badge-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              Flux Reconstruction (P=3) GPU CFD
+            </span>
+            <span class="hero-badge-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              Turbulence Intensity &lt; 0.1%
+            </span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#opendynamo" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Explore OpenDynamo Solver
+            </a>
+            <a href="#facilities" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Wind Tunnel Facilities
+            </a>
+            <a href="./opendynamo.html" class="btn btn-outline">
+              Monograph & Docs &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Flow Simulator Card -->
+        <div class="simulator-card">
+          <div class="sim-header">
+            <div class="sim-title-group">
+              <span class="sim-indicator"></span>
+              <span>Interactive Aerodynamic Simulator</span>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan);">NACA 0012 Profile</span>
+          </div>
+
+          <div class="sim-canvas-wrapper">
+            <canvas id="hero-canvas"></canvas>
+            <div class="sim-overlay-info">Real-Time Potential + Vortex Wake Model</div>
+          </div>
+
+          <div class="sim-controls">
+            <div class="control-row">
+              <span class="control-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                Angle of Attack (α)
+              </span>
+              <input type="range" id="sim-aoa" class="control-slider" min="-12" max="22" step="1" value="6">
+              <span class="control-val" id="sim-aoa-val">+6°</span>
+            </div>
+
+            <div class="control-row">
+              <span class="control-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Free-stream Velocity (U∞)
+              </span>
+              <input type="range" id="sim-speed" class="control-slider" min="1.0" max="6.0" step="0.5" value="3.5">
+              <span class="control-val" id="sim-speed-val">3.5x</span>
+            </div>
+
+            <div class="sim-toggle-group">
+              <button class="sim-toggle-btn active" id="sim-btn-particles">Streakline Particles</button>
+              <button class="sim-toggle-btn" id="sim-btn-streamlines">Instantaneous Streamlines</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab Metrics Strip -->
+      <div class="stats-strip">
+        <div class="stat-item">
+          <div class="stat-num">60 <span>m/s</span></div>
+          <div class="stat-label">Max Tunnel Velocity</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">&lt; 0.1 <span>%</span></div>
+          <div class="stat-label">Turbulence Intensity</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">80 <span>Ch</span></div>
+          <div class="stat-label">High-Speed DPS Pressure</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">P=3 <span>FR</span></div>
+          <div class="stat-label">Spectral Element DOF</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">40+ <span>Pubs</span></div>
+          <div class="stat-label">Theses & Articles</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Research Pillars -->
+  <section class="section-py" id="pillars">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Methodological Foundations</div>
+        <h2 class="section-title">The Three Pillars of DANA</h2>
+        <p class="section-desc">
+          Uniting rigorous mathematical modeling, state-of-the-art computational algorithms, precision laboratory testing, and modern data-driven architectures.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1: High-Order Numerical CFD -->
+        <div class="pillar-card num" style="--card-accent: var(--accent-cyan);">
+          <div class="pillar-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <line x1="9" y1="1" x2="9" y2="4"/>
+              <line x1="15" y1="1" x2="15" y2="4"/>
+              <line x1="9" y1="20" x2="9" y2="23"/>
+              <line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9" x2="23" y2="9"/>
+              <line x1="20" y1="14" x2="23" y2="14"/>
+              <line x1="1" y1="9" x2="4" y2="9"/>
+              <line x1="1" y1="14" x2="4" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Numerical Aerodynamics &amp; High-Order CFD</h3>
+          <p class="pillar-desc">
+            Direct Numerical Simulation (DNS) and Wall-Resolved Large-Eddy Simulation (LES) powered by high-order Flux Reconstruction (FR) and Discontinuous Galerkin (DG) formulations on GPU accelerators.
+          </p>
+          <ul class="pillar-features">
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Flux Reconstruction collocation ($P=3$, 64 DOF/element)</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>NVRTC runtime CUDA compilation (zero nvcc overhead)</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Shock-capturing &amp; low dissipation fluxes: SLAU2, AUSM+</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Bit-exact trajectory checkpoints with Blosc-LZ4 HDF5</span>
+            </li>
+          </ul>
+          <a href="#opendynamo" class="btn btn-outline btn-sm" style="margin-top: auto;">Explore OpenDynamo &rarr;</a>
+        </div>
+
+        <!-- Pillar 2: Experimental Diagnostics -->
+        <div class="pillar-card exp" style="--card-accent: var(--accent-blue);">
+          <div class="pillar-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Experimental Diagnostics &amp; Wind Tunnel</h3>
+          <p class="pillar-desc">
+            Subsonic open-circuit suction wind tunnel coupled with high-frequency velocity measurements, multi-channel pressure scanning, dynamic load balances, and optical flow visualizations.
+          </p>
+          <ul class="pillar-features">
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Open-circuit suction tunnel: $2\times 1\times 1$ m test section, 60 m/s</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dantec Constant Temperature Hotwire Anemometry (2 kHz)</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>80-Channel Scanivalve differential pressure scanner</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Smoke tunnel, surface oil streaks &amp; UV fluorescent visualization</span>
+            </li>
+          </ul>
+          <a href="#facilities" class="btn btn-outline btn-sm" style="margin-top: auto;">Facility Tour &rarr;</a>
+        </div>
+
+        <!-- Pillar 3: Machine Learning & Flow Control -->
+        <div class="pillar-card ml" style="--card-accent: var(--accent-emerald);">
+          <div class="pillar-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="5" r="3"/>
+              <circle cx="5" cy="19" r="3"/>
+              <circle cx="19" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Machine Learning &amp; Active Flow Control</h3>
+          <p class="pillar-desc">
+            Leveraging Physics-Informed Neural Networks (PINNs), reduced-order models (ROM), and deep reinforcement learning for active boundary layer separation suppression and aerodynamic design.
+          </p>
+          <ul class="pillar-features">
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dielectric Barrier Discharge (DBD) linear &amp; serpentine actuators</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Deep learning aerodynamic surrogate &amp; coefficient prediction</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Turbulence super-resolution &amp; experimental PIV/CTA fusion</span>
+            </li>
+            <li class="pillar-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dynamic morphing wing closed-loop shape adaptation</span>
+            </li>
+          </ul>
+          <a href="#projects" class="btn btn-outline btn-sm" style="margin-top: auto;">Explore ML Projects &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Flagship Project: OpenDynamo -->
+  <section class="section-py" id="opendynamo" style="background: rgba(0, 0, 0, 0.2);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" style="background: rgba(0, 212, 255, 0.15); border-color: var(--accent-cyan);">
+          Featured Flagship Project • Open Source
+        </div>
+        <h2 class="section-title">OpenDynamo</h2>
+        <p class="section-desc">
+          Bit-Exact GPU Spectral-Element (Flux Reconstruction, P=3) Solver for 3D Compressible Navier–Stokes, engineered in Rust with CUDA kernels compiled at runtime via NVRTC.
+        </p>
+      </div>
+
+      <div class="opendynamo-feature-card">
+        <div class="od-grid">
+          <!-- Media Showcase Pane -->
+          <div class="od-media-pane">
+            <div class="od-view-switcher">
+              <div class="od-media-tabs">
+                <button class="od-tab-btn active" data-target="od-video">MP4 Animation</button>
+                <button class="od-tab-btn" data-target="od-gif">Animated GIF</button>
+                <button class="od-tab-btn" data-target="od-plot">DNS Multi-Panel Plot</button>
+              </div>
+              <span class="btn-icon open-modal-trigger" data-img="./assets/opendynamo/flow_visualization_final.png" data-title="OpenDynamo DNS Flow Visualization" data-desc="Turbulent streaks at y+ ~ 15, instantaneous streamwise velocity, cross-plane vorticity, and Kim-Moin-Moser (1987) comparison." title="Enlarge Image">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+
+            <div class="od-media-display">
+              <div class="od-media-overlay-badge" id="od-media-badge">3D Coherent Vortices (MP4 @ 60fps)</div>
+              
+              <!-- Video Player -->
+              <video id="od-video" class="od-media-item active" autoplay loop muted playsinline poster="./assets/opendynamo/flow_visualization_final.png">
+                <source src="./assets/opendynamo/flow_animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              <!-- GIF Player -->
+              <img id="od-gif" class="od-media-item" src="./assets/opendynamo/flow_animation.gif" alt="Turbulent Channel Flow Animated GIF">
+
+              <!-- High-Res DNS Plot -->
+              <img id="od-plot" class="od-media-item" src="./assets/opendynamo/flow_visualization_final.png" alt="OpenDynamo Publication DNS Verification Figure">
+            </div>
+          </div>
+
+          <!-- Technical Breakdown Pane -->
+          <div class="od-content-pane">
+            <div class="od-badge-row">
+              <span class="pub-type-badge">Rust 2024</span>
+              <span class="pub-type-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">CUDA / NVRTC</span>
+              <span class="pub-type-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.3);">KMM87 Validated</span>
+            </div>
+
+            <h3 class="od-title">High-Order Fidelity with Bit-For-Bit Restart Exactness</h3>
+            <p class="od-subtitle">
+              Engineered to make wall-bounded turbulence visual and exact. Discretized with Flux Reconstruction on hexahedra ($P=3$, 64 solution points per element), generating ~7.1 Million Degrees of Freedom on a 48³ element mesh with sustained 63.5 ms/step execution.
+            </p>
+
+            <div class="od-specs-grid">
+              <div class="od-spec-card">
+                <div class="od-spec-label">Discretization</div>
+                <div class="od-spec-val">Hex FR (P=3, 64 pts/elem)</div>
+              </div>
+              <div class="od-spec-card">
+                <div class="od-spec-label">Physics Solved</div>
+                <div class="od-spec-val">3D Compressible Navier–Stokes</div>
+              </div>
+              <div class="od-spec-card">
+                <div class="od-spec-label">Riemann Fluxes</div>
+                <div class="od-spec-val">SLAU2, AUSM+, Rusanov</div>
+              </div>
+              <div class="od-spec-card">
+                <div class="od-spec-label">Wall Closure</div>
+                <div class="od-spec-val">Linear Slip &amp; Viscous Adiabatic</div>
+              </div>
+              <div class="od-spec-card">
+                <div class="od-spec-label">Time Integration</div>
+                <div class="od-spec-val">Explicit 3-Stage RK3</div>
+              </div>
+              <div class="od-spec-card">
+                <div class="od-spec-label">I/O Pipeline</div>
+                <div class="od-spec-val">Async HDF5 Blosc-LZ4</div>
+              </div>
+            </div>
+
+            <div class="od-actions">
+              <a href="https://github.com/drunkseal/opendynamo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub Repository
+              </a>
+              <a href="./opendynamo.html" class="btn btn-outline">
+                Full Technical Monograph &rarr;
+              </a>
+              <button class="btn btn-outline" onclick="copyBibtex('bibtex-opendynamo')" data-copy-for="bibtex-opendynamo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy BibTeX
+              </button>
+            </div>
+
+            <!-- Hidden BibTeX for Copying -->
+            <pre id="bibtex-opendynamo" style="display:none;">@software{opendynamo2024,
+  author = {Alizadeh, Ilia and DANA Aerodynamics Laboratory},
+  title = {OpenDynamo: GPU Spectral-Element Solver for 3D Compressible Navier-Stokes},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/drunkseal/opendynamo}}
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Benchmark Charts Section -->
+      <div class="chart-container-card" id="benchmark">
+        <div class="chart-header">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.35rem;">DNS Validation: Turbulent Channel Flow ($Re_\tau \approx 180$)</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary);">Direct comparison of OpenDynamo simulation data against Kim, Moin &amp; Moser (1987) DNS database</p>
+          </div>
+          <div class="chart-tabs">
+            <button class="chart-tab-btn active" id="chart-btn-velocity">Mean Velocity Profile (u⁺ vs y⁺)</button>
+            <button class="chart-tab-btn" id="chart-btn-stresses">Turbulent Reynolds Stresses</button>
+          </div>
+        </div>
+
+        <div class="chart-canvas-wrapper">
+          <canvas id="dns-chart-canvas"></canvas>
+        </div>
+
+        <!-- Legend for Velocity -->
+        <div class="chart-legend" id="chart-legend-velocity">
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #00d4ff;"></div>
+            <span>OpenDynamo DNS (SLAU2, P=3)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #94a3b8;"></div>
+            <span>Viscous Sublayer ($u^+ = y^+$)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #f59e0b;"></div>
+            <span>Log-Law Layer ($u^+ = \frac{1}{0.41}\ln y^+ + 5.2$)</span>
+          </div>
+        </div>
+
+        <!-- Legend for Stresses -->
+        <div class="chart-legend" id="chart-legend-stresses" style="display: none;">
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #00d4ff;"></div>
+            <span>Streamwise $u'_{rms} / u_\tau$</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #10b981;"></div>
+            <span>Spanwise $w'_{rms} / u_\tau$</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #3b82f6;"></div>
+            <span>Wall-Normal $v'_{rms} / u_\tau$</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color-dot" style="background: #f43f5e;"></div>
+            <span>Reynolds Shear $- \overline{u'v'} / u_\tau^2$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Research & Projects Catalog -->
+  <section class="section-py" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Comprehensive Research Portfolio</div>
+        <h2 class="section-title">Aerodynamic Projects &amp; Investigations</h2>
+        <p class="section-desc">
+          Spanning applied aerospace engineering, vehicle aeroacoustics, bio-inspired aerodynamics, and fundamental turbulent boundary layer control.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Investigations</button>
+        <button class="filter-btn" data-filter="cfd">Numerical &amp; CFD</button>
+        <button class="filter-btn" data-filter="exp">Experimental &amp; Wind Tunnel</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning &amp; Control</button>
+        <button class="filter-btn" data-filter="industrial">Industrial Programs</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: OpenDynamo -->
+        <div class="project-card" data-category="cfd ml">
+          <div class="project-thumb">
+            <img src="./assets/opendynamo/flow_visualization_final.png" alt="OpenDynamo DNS">
+            <span class="project-tag">Numerical CFD</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">GPU Spectral Element • DNS / LES</div>
+            <h3 class="project-title">OpenDynamo: High-Order Compressible DNS Solver</h3>
+            <p class="project-desc">
+              GPU-accelerated Flux Reconstruction solver in Rust with runtime CUDA kernel synthesis via NVRTC. Re_tau=180 channel turbulence validation and SLAU2 flux closure.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">P=3 Collocation (64 DOF)</span>
+              <a href="./opendynamo.html" class="btn btn-outline btn-sm">Deep Dive &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: IRJ-72 Regional Jet -->
+        <div class="project-card" data-category="exp industrial">
+          <div class="project-thumb">
+            <img src="./assets/images/irj72_aircraft_model.png" alt="IRJ-72 Wind Tunnel Model">
+            <span class="project-tag">Experimental / Industrial</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">ASA Aerospace • Wind Tunnel Testing</div>
+            <h3 class="project-title">IRJ-72 Aircraft High-AoA Stall &amp; Flap Aerodynamics</h3>
+            <p class="project-desc">
+              Comprehensive wind tunnel study of the IRJ-72 regional passenger jet. Analysis of wing stall cells, flap deflection performance, and nacelle/pylon aerodynamic interference.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Oil &amp; Smoke Flow Viz</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/irj72_flow_separation.png" data-title="IRJ-72 Flow Separation Patterns" data-desc="Oil surface visualization showing separation cell structures at high angles of attack.">View Viz &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Smart Morphing Wings -->
+        <div class="project-card" data-category="exp ml">
+          <div class="project-thumb">
+            <img src="./assets/images/morphing_wing_mechanism.png" alt="Smart Morphing Wing">
+            <span class="project-tag">ML &amp; Experimental</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Active Shape Adaptation • Wind Tunnel</div>
+            <h3 class="project-title">Smart Morphing Wings with Actuated Compliant Ribs</h3>
+            <p class="project-desc">
+              Experimental study of morphing airfoils equipped with internal compliant shape-changing mechanisms to optimize lift-to-drag ratio across varying flight regimes.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Shape Optimization</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/morphing_wing_ribs.png" data-title="Morphing Wing Rib Architecture" data-desc="Compliant internal structural ribs with servo-actuated profile adjustment.">Inspect &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: DBD Plasma Actuator Flow Control -->
+        <div class="project-card" data-category="exp ml">
+          <div class="project-thumb">
+            <img src="./assets/images/plasma_actuator_linear.png" alt="Plasma Actuators">
+            <span class="project-tag">Active Flow Control</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Dielectric Barrier Discharge • Stall Mitigation</div>
+            <h3 class="project-title">Linear &amp; Serpentine DBD Plasma Actuators</h3>
+            <p class="project-desc">
+              Mitigating boundary layer separation on symmetric airfoils and reducing wake drag on 3D bluff bodies (Ahmed Body) using high-voltage AC plasma actuators.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Stall Angle Delay +4°</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/plasma_actuator_serpentine.png" data-title="Serpentine DBD Actuator Plasma Field" data-desc="Three-dimensional vortex generation by serpentine plasma actuator geometry.">View Actuator &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: JT8D Turbofan Inlet Ground Vortex -->
+        <div class="project-card" data-category="exp industrial">
+          <div class="project-thumb">
+            <img src="./assets/images/jt8d_engine_inlet.png" alt="JT8D Engine Inlet">
+            <span class="project-tag">Industrial Aerodynamics</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Inlet Vortices • FOD Ingestion Prevention</div>
+            <h3 class="project-title">JT8D Inlet Ground Vortex Ingestion &amp; Pressure Field</h3>
+            <p class="project-desc">
+              Detailed pressure distribution and oil flow visualization investigating ground vortex (GV) formation in close ground proximity and Foreign Object Damage risk mitigation.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Multi-Port Pressure Mapping</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/jt8d_ground_vortex_fod.png" data-title="JT8D Ground Vortex Visualization" data-desc="Surface oil streak traces showing core vortex stagnation and ingestion path.">View Trace &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Nature-Inspired Biomimetic Wings -->
+        <div class="project-card" data-category="exp cfd">
+          <div class="project-thumb">
+            <img src="./assets/images/biomimetic_wing_shapes.png" alt="Biomimetic Wing Tips">
+            <span class="project-tag">Experimental Aerodynamics</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Bio-Inspired Planforms • Tip Vortex Attenuation</div>
+            <h3 class="project-title">Biomimetic Wingtip Geometries &amp; Planform Aerodynamics</h3>
+            <p class="project-desc">
+              Experimental performance analysis of wingtips inspired by owl and raptor feathers. Investigating induced drag reduction and tip vortex diffusion at low-to-medium Reynolds numbers.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Induced Drag Reduction</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/biomimetic_planform_study.png" data-title="Biomimetic Wingtip Variations" data-desc="Comparative study of slotted, serrated, and swept tip geometries in the wind tunnel.">Compare &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Simorgh Transport Aircraft Engine Tail Interaction -->
+        <div class="project-card" data-category="exp industrial">
+          <div class="project-thumb">
+            <img src="./assets/images/simorgh_tail_aerodynamics.png" alt="Simorgh Tail Aerodynamics">
+            <span class="project-tag">Industrial Program</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Propulsion-Airframe Interaction</div>
+            <h3 class="project-title">Simorgh Aircraft Engine Replacement Aerodynamic Study</h3>
+            <p class="project-desc">
+              Investigating the aerodynamic influence of modern turboprop engine exhaust wakes on the horizontal tailplane. Velocity mapping via fluorescent powder tracing.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Exhaust Jet Velocity Mapping</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/simorgh_exhaust_jet.png" data-title="Fluorescent Jet Visualization" data-desc="High-contrast UV illuminated fluorescent powder tracing of the engine exhaust boundary.">View Wake &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Dena+ Vehicle Aeroacoustics -->
+        <div class="project-card" data-category="exp industrial">
+          <div class="project-thumb">
+            <img src="./assets/images/dena_car_aerodynamics.png" alt="Dena+ Car Aerodynamics">
+            <span class="project-tag">Automotive Aeroacoustics</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">A-Pillar Vortices • Side Mirror Wake</div>
+            <h3 class="project-title">Dena+ Automotive Aeroacoustics &amp; Wake Separation</h3>
+            <p class="project-desc">
+              Wind tunnel investigation of side mirror separation bubbles, A-pillar vortex shedding, and greenhouse window pressure fluctuations responsible for interior cabin wind noise.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Aeroacoustic Noise Reduction</span>
+              <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/dena_mirror_separation.png" data-title="Side Mirror Wake Visualization" data-desc="Oil flow visualization revealing the separated recirculation zone behind the mirror.">Inspect Wake &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Industrial Flare Stacks & Porous Windbreaks -->
+        <div class="project-card" data-category="exp industrial">
+          <div class="project-thumb" style="display:flex;align-items:center;justify-content:center;background:#0d1526;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5">
+              <path d="M12 2v20M8 6h8M6 10h12M4 14h16M2 18h20"/>
+            </svg>
+            <span class="project-tag">Energy &amp; Environment</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">NIOC &amp; Mana Sanat • Environmental Fluid Mechanics</div>
+            <h3 class="project-title">Industrial Flare Stack Aerodynamics &amp; Porous Windbreaks</h3>
+            <p class="project-desc">
+              Wind tunnel evaluation of crosswind interactions on flare combustion efficiency and the aerodynamic design of porous windbreak barriers for bulk dust dispersion control.
+            </p>
+            <div class="project-footer">
+              <span class="text-cyan">Plume &amp; Barrier Aerodynamics</span>
+              <span class="text-secondary" style="font-size: 0.8rem;">Experimental Tunnel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wind Tunnel & Diagnostic Facilities -->
+  <section class="section-py" id="facilities" style="background: rgba(0, 0, 0, 0.15);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Experimental Infrastructure</div>
+        <h2 class="section-title">Diagnostic Facilities &amp; Equipment</h2>
+        <p class="section-desc">
+          State-of-the-art subsonic wind tunnel and precision metrology systems located at the Faculty of Aerospace Engineering, Amirkabir University of Technology.
+        </p>
+      </div>
+
+      <!-- Hero Facility Feature Card -->
+      <div class="facility-feature">
+        <div class="facility-img-box">
+          <img src="./assets/images/wind_tunnel_facility.png" alt="DANA Subsonic Wind Tunnel">
+        </div>
+        <div>
+          <span class="section-badge" style="margin-bottom: 0.75rem;">Central Testing Rig</span>
+          <h3 style="font-size: 1.85rem; margin-bottom: 0.875rem;">DANA Subsonic Wind Tunnel</h3>
+          <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.25rem;">
+            An open-circuit suction wind tunnel featuring a contraction nozzle, settling chamber with precision honeycombs and anti-turbulence screens, delivering exceptionally uniform test section flow with less than 0.1% turbulence intensity.
+          </p>
+
+          <div class="facility-specs-list">
+            <div class="facility-spec-item">
+              <div class="facility-spec-title">Test Section Dimensions</div>
+              <div class="facility-spec-value">2.0 × 1.0 × 1.0 m</div>
+            </div>
+            <div class="facility-spec-item">
+              <div class="facility-spec-title">Maximum Airspeed</div>
+              <div class="facility-spec-value">60 m/s (216 km/h)</div>
+            </div>
+            <div class="facility-spec-item">
+              <div class="facility-spec-title">Turbulence Intensity</div>
+              <div class="facility-spec-value">&lt; 0.1 %</div>
+            </div>
+            <div class="facility-spec-item">
+              <div class="facility-spec-title">Circuit Architecture</div>
+              <div class="facility-spec-value">Open-Circuit Suction</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap: 0.875rem; flex-wrap: wrap;">
+            <a href="./facilities.html" class="btn btn-primary btn-sm">Full Facility Specifications &rarr;</a>
+            <button class="btn btn-outline btn-sm open-modal-trigger" data-img="./assets/images/wind_tunnel_facility.png" data-title="DANA Subsonic Wind Tunnel" data-desc="Complete view of the settling chamber, nozzle contraction, 2x1x1 m test section, and downstream diffuser.">Enlarge Photo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnostic Metrology Instruments -->
+      <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Diagnostic Metrology Suite</h3>
+      <div class="instruments-grid">
+        <!-- Instrument 1: Hotwire Anemometer -->
+        <div class="instrument-card open-modal-trigger" data-img="./assets/images/hotwire_probes.png" data-title="Dantec Hotwire Anemometry System" data-desc="Constant Temperature Anemometer (CTA) with 2 kHz frequency response, measuring speed from 0 to 100 m/s with ±0.01 m/s accuracy.">
+          <div class="instrument-thumb">
+            <img src="./assets/images/hotwire_probes.png" alt="Hotwire Probes">
+          </div>
+          <div class="instrument-body">
+            <h4 class="instrument-title">CTA Hotwire Anemometry</h4>
+            <p class="instrument-desc">High-frequency velocity fluctuation measurement (0–100 m/s, ±0.01 m/s accuracy) with 2 kHz turbulence spectrum capture.</p>
+            <div class="instrument-spec-badge">2 kHz Bandwidth • CTA Probes</div>
+          </div>
+        </div>
+
+        <!-- Instrument 2: 80-Channel DPS -->
+        <div class="instrument-card open-modal-trigger" data-img="./assets/images/dps_80channel_box.png" data-title="80-Channel DPS Pressure Acquisition Box" data-desc="Multi-range differential pressure sensor box (5, 12.5, 25, 69 mbar) with FS accuracy under 0.1%.">
+          <div class="instrument-thumb">
+            <img src="./assets/images/dps_80channel_box.png" alt="80-Channel DPS Box">
+          </div>
+          <div class="instrument-body">
+            <h4 class="instrument-title">80-Channel DPS Pressure Scanner</h4>
+            <p class="instrument-desc">High-density synchronous multi-port surface pressure measurement system with full-scale accuracy &lt; 0.1%.</p>
+            <div class="instrument-spec-badge">80 Ports • 5 to 69 mbar</div>
+          </div>
+        </div>
+
+        <!-- Instrument 3: 3 & 6 Component Balances -->
+        <div class="instrument-card open-modal-trigger" data-img="./assets/images/balance_3component.png" data-title="3-Component & 6-Component Aerodynamic Balances" data-desc="External 3-component balance (100 N lift/drag, 2.5 N.m pitch) and dynamic 6-component balance (300 N forces X,Y,Z).">
+          <div class="instrument-thumb">
+            <img src="./assets/images/balance_3component.png" alt="Aerodynamic Balances">
+          </div>
+          <div class="instrument-body">
+            <h4 class="instrument-title">Aerodynamic Force Balances</h4>
+            <p class="instrument-desc">3-component and dynamic 6-component internal/external load cells for static and oscillatory force and moment logging.</p>
+            <div class="instrument-spec-badge">300 N Range • 6 DOF</div>
+          </div>
+        </div>
+
+        <!-- Instrument 4: 3-Axis Traversal & Alpha Rig -->
+        <div class="instrument-card open-modal-trigger" data-img="./assets/images/traversing_system.png" data-title="3-Axis Traversing Rig & Alpha Pitch Mechanism" data-desc="Automated CNC traversing system with 1 mm spatial accuracy across X, Y, Z and 0.1° angle of attack precision.">
+          <div class="instrument-thumb">
+            <img src="./assets/images/traversing_system.png" alt="3-Axis Traversing System">
+          </div>
+          <div class="instrument-body">
+            <h4 class="instrument-title">3D Traversing &amp; Alpha Mechanism</h4>
+            <p class="instrument-desc">Automated Cartesian probe repositioning (1 mm resolution) and precise model angle-of-attack pitch mechanism (0.1° resolution).</p>
+            <div class="instrument-spec-badge">1 mm Spatial • 0.1° Pitch</div>
+          </div>
+        </div>
+
+        <!-- Instrument 5: Advanced Optical Flow Viz -->
+        <div class="instrument-card open-modal-trigger" data-img="./assets/images/flow_viz_fluorescent_uv.jpg" data-title="Optical Flow Visualization Suite" data-desc="Smoke wire, surface oil streak visualization, UV fluorescent tracer powder, and surface tufts.">
+          <div class="instrument-thumb">
+            <img src="./assets/images/flow_viz_fluorescent_uv.jpg" alt="Flow Visualization">
+          </div>
+          <div class="instrument-body">
+            <h4 class="instrument-title">Flow Visualization Suite</h4>
+            <p class="instrument-desc">Smoke tunnel streamlines, fluorescent powder with UV illumination, surface oil patterns, and tuft dynamics for stall mapping.</p>
+            <div class="instrument-spec-badge">Laser / UV Fluorescent / Oil</div>
+          </div>
+        </div>
+
+        <!-- Instrument 6: Additive Prototyping Laboratory -->
+        <div class="instrument-card open-modal-trigger" data-img="./assets/images/fdm_3d_printer.jpg" data-title="High-Precision Rapid Prototyping" data-desc="Large-format FDM additive manufacturing (45x30x42 cm, up to 100 micron precision) in PLA/ABS for aerodynamic models.">
+          <div class="instrument-thumb">
+            <img src="./assets/images/fdm_3d_printer.jpg" alt="3D Prototyping Printer">
+          </div>
+          <div class="instrument-body">
+            <h4 class="instrument-title">Aerodynamic Model Prototyping</h4>
+            <p class="instrument-desc">Industrial-scale FDM additive manufacturing facility ($45\times 30\times 42$ cm build volume, 100 µm precision) for tunnel models.</p>
+            <div class="instrument-spec-badge">45×30×42 cm • 100 µm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications & Research Output -->
+  <section class="section-py" id="publications">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Scholarly Dissemination</div>
+        <h2 class="section-title">Selected Publications &amp; Reports</h2>
+        <p class="section-desc">
+          Key journal papers, conference contributions, and research dissertations originating from the DANA Aerodynamics Laboratory.
+        </p>
+      </div>
+
+      <div class="pub-list">
+        <!-- Publication 1 -->
+        <div class="pub-card">
+          <div class="pub-meta-row">
+            <span class="pub-type-badge">Software &amp; CFD</span>
+            <span>2024</span>
+            <span>• Direct Numerical Simulation</span>
+          </div>
+          <h3 class="pub-title">OpenDynamo: A Bit-Exact GPU Spectral-Element Solver for Compressible Navier-Stokes via Runtime NVRTC CUDA Synthesis</h3>
+          <p class="pub-authors">Ilia Alizadeh, DANA Aerodynamics Laboratory</p>
+          <p class="pub-venue">Technical Monograph &amp; Open Source Implementation, Amirkabir University of Technology, 2024</p>
+          <div class="pub-actions">
+            <a href="https://github.com/drunkseal/opendynamo" target="_blank" class="btn btn-outline btn-sm">GitHub Repository</a>
+            <a href="./opendynamo.html" class="btn btn-outline btn-sm">Technical Documentation</a>
+            <button class="btn btn-outline btn-sm" onclick="copyBibtex('bib-pub-1')" data-copy-for="bib-pub-1">Copy Citation</button>
+          </div>
+          <pre id="bib-pub-1" style="display:none;">@article{alizadeh2024opendynamo,
+  title={OpenDynamo: A Bit-Exact GPU Spectral-Element Solver for Compressible Navier-Stokes via Runtime NVRTC CUDA Synthesis},
+  author={Alizadeh, Ilia},
+  year={2024},
+  journal={DANA Aerodynamics Laboratory Technical Report},
+  institution={Amirkabir University of Technology}
+}</pre>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="pub-card">
+          <div class="pub-meta-row">
+            <span class="pub-type-badge">Experimental Aerodynamics</span>
+            <span>2023</span>
+            <span>• Wind Tunnel Investigation</span>
+          </div>
+          <h3 class="pub-title">Experimental Investigation of Trailing Edge Flap Deflection on High Angle of Attack Flow Separation Over Regional Transport Aircraft Wings</h3>
+          <p class="pub-authors">M. Mani, M. Kazemi, DANA Research Group</p>
+          <p class="pub-venue">Journal of Aerospace Science and Technology, Amirkabir University of Technology</p>
+          <div class="pub-actions">
+            <button class="btn btn-outline btn-sm" onclick="copyBibtex('bib-pub-2')" data-copy-for="bib-pub-2">Copy Citation</button>
+          </div>
+          <pre id="bib-pub-2" style="display:none;">@article{mani2023flaps,
+  title={Experimental Investigation of Trailing Edge Flap Deflection on High Angle of Attack Flow Separation Over Regional Transport Aircraft Wings},
+  author={Mani, Masoud and Kazemi, Mostafa},
+  journal={Aerospace Science and Technology},
+  year={2023}
+}</pre>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="pub-card">
+          <div class="pub-meta-row">
+            <span class="pub-type-badge">Active Flow Control</span>
+            <span>2023</span>
+            <span>• Plasma Aerodynamics</span>
+          </div>
+          <h3 class="pub-title">Active Aerodynamic Drag Reduction of Bluff Bodies and Ahmed Vehicle Geometries Using Serpentine Dielectric Barrier Discharge (DBD) Plasma Actuators</h3>
+          <p class="pub-authors">DANA Plasma Flow Control Team, M. Mani</p>
+          <p class="pub-venue">Proceedings of the International Aerodynamics &amp; Flight Mechanics Conference</p>
+          <div class="pub-actions">
+            <button class="btn btn-outline btn-sm" onclick="copyBibtex('bib-pub-3')" data-copy-for="bib-pub-3">Copy Citation</button>
+          </div>
+          <pre id="bib-pub-3" style="display:none;">@inproceedings{dana2023plasma,
+  title={Active Aerodynamic Drag Reduction of Bluff Bodies and Ahmed Vehicle Geometries Using Serpentine Dielectric Barrier Discharge (DBD) Plasma Actuators},
+  author={Mani, Masoud and DANA Team},
+  booktitle={Proceedings of International Aerodynamics Conference},
+  year={2023}
+}</pre>
+        </div>
+
+        <!-- Publication 4 -->
+        <div class="pub-card">
+          <div class="pub-meta-row">
+            <span class="pub-type-badge">Turbomachinery &amp; Propulsion</span>
+            <span>2022</span>
+            <span>• Inlet Aerodynamics</span>
+          </div>
+          <h3 class="pub-title">Surface Pressure Distribution and Optical Visualization of Ground Vortex Formation in Close-Proximity Jet Engine Inlets</h3>
+          <p class="pub-authors">DANA Turbomachinery Group, M. Kazemi, M. Mani</p>
+          <p class="pub-venue">Aerospace Engineering Research Series, AUT</p>
+          <div class="pub-actions">
+            <button class="btn btn-outline btn-sm" onclick="copyBibtex('bib-pub-4')" data-copy-for="bib-pub-4">Copy Citation</button>
+          </div>
+          <pre id="bib-pub-4" style="display:none;">@article{kazemi2022inlet,
+  title={Surface Pressure Distribution and Optical Visualization of Ground Vortex Formation in Close-Proximity Jet Engine Inlets},
+  author={Kazemi, Mostafa and Mani, Masoud},
+  journal={Aerospace Engineering Research Series},
+  year={2022}
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- People & Research Team -->
+  <section class="section-py" id="team" style="background: rgba(0, 0, 0, 0.2);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Leadership &amp; Researchers</div>
+        <h2 class="section-title">The DANA Research Team</h2>
+        <p class="section-desc">
+          Founded in August 2012 at Amirkabir University of Technology, cultivating collaboration across graduate, undergraduate, and industrial researchers.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Member 1: Prof. Masoud Mani -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="./assets/images/aut_logo.png" alt="Prof. Masoud Mani">
+          </div>
+          <h3 class="team-name">Prof. Masoud Mani</h3>
+          <div class="team-role">Laboratory Founder &amp; Director</div>
+          <p class="team-bio">
+            Professor of Aerospace Engineering at Amirkabir University of Technology. Expert in subsonic and transonic aerodynamics, experimental wind tunnel testing, dynamic stability, and flow control.
+          </p>
+          <div class="team-links">
+            <a href="mailto:Mani@aut.ac.ir" class="btn-icon" title="Email Prof. Mani" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Member 2: Ilia Alizadeh -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="./assets/images/dana_logo.png" alt="Ilia Alizadeh">
+          </div>
+          <h3 class="team-name">Ilia Alizadeh</h3>
+          <div class="team-role">CFD &amp; Scientific Computing Lead</div>
+          <p class="team-bio">
+            Lead developer of OpenDynamo. Specializes in high-order GPU spectral-element methods (Flux Reconstruction), CUDA runtime code synthesis, turbulent channel flows, and machine learning physics.
+          </p>
+          <div class="team-links">
+            <a href="https://github.com/drunkseal" target="_blank" class="btn-icon" title="GitHub" aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="mailto:iliaalizadee@gmail.com" class="btn-icon" title="Email" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Member 3: Mostafa Kazemi -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="./assets/images/dana_logo.png" alt="Mostafa Kazemi">
+          </div>
+          <h3 class="team-name">Mostafa Kazemi</h3>
+          <div class="team-role">Experimental Diagnostics &amp; Tunnel Operations</div>
+          <p class="team-bio">
+            Specialist in wind tunnel instrumentation, high-speed multi-channel pressure scanners (DPS), constant-temperature hotwire anemometry, and industrial aerodynamics testing protocols.
+          </p>
+          <div class="team-links">
+            <a href="mailto:kazemi.mostafa@aut.ac.ir" class="btn-icon" title="Email" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Join Us Callout Banner -->
+      <div class="join-banner">
+        <div class="join-text-group">
+          <h3 class="join-title">Interested in Joining DANA Laboratory?</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6;">
+            We continuously welcome motivated MSc, PhD, and undergraduate research assistants passionate about GPU computational fluid dynamics, machine learning for flow control, and experimental wind tunnel aerodynamics.
+          </p>
+        </div>
+        <a href="#contact" class="btn btn-primary">Contact Admissions &amp; Inquiries &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section class="section-py" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Get in Touch</div>
+        <h2 class="section-title">Laboratory Contact &amp; Location</h2>
+        <p class="section-desc">
+          Collaborate on industrial aerodynamic testing, graduate research, or open-source scientific software.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">DANA Aerodynamics Laboratory</h3>
+          <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 2rem;">
+            Faculty of Aerospace Engineering, Amirkabir University of Technology (Tehran Polytechnic). Serving academia and industry since August 2012.
+          </p>
+
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-val">424 Hafez Ave, Aerospace Engineering Dept, Tehran, Iran</div>
+              </div>
+            </li>
+
+            <li class="contact-info-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Official Inquiries</div>
+                <div class="contact-val">
+                  <a href="mailto:Mani@aut.ac.ir">Mani@aut.ac.ir</a> • <a href="mailto:kazemi.mostafa@aut.ac.ir">kazemi.mostafa@aut.ac.ir</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="contact-info-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Telephone</div>
+                <div class="contact-val">(+98 21) 6454-5641</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem;">
+          <h4 style="font-size: 1.2rem; margin-bottom: 1rem;">Direct Message &amp; Collaboration</h4>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            For wind tunnel testing inquiries, numerical solver collaboration, or visiting researcher positions:
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <a href="mailto:Mani@aut.ac.ir?subject=DANA%20Aerodynamics%20Lab%20Inquiry" class="btn btn-primary" style="width: 100%;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Contact Lab Management
+            </a>
+            <a href="https://github.com/drunkseal/opendynamo/issues" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              OpenDynamo GitHub Issues
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="./assets/images/dana_logo.png" alt="DANA Logo" style="width: 36px; height: 36px;">
+            <span style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em;">DANA AERODYNAMICS LAB</span>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Subsonic Wind Tunnel Laboratory, Faculty of Aerospace Engineering, Amirkabir University of Technology (Tehran Polytechnic).
+          </p>
+          <div style="display:flex; align-items:center; gap: 0.5rem;">
+            <img src="./assets/images/aut_logo.png" alt="AUT Emblem" style="height: 38px; opacity: 0.85;">
+            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Tehran Polytechnic</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#pillars" class="footer-link">Three Pillars</a></li>
+            <li><a href="#opendynamo" class="footer-link">OpenDynamo Solver</a></li>
+            <li><a href="#projects" class="footer-link">Research Projects</a></li>
+            <li><a href="#facilities" class="footer-link">Diagnostic Suite</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Documentation</div>
+          <ul class="footer-links">
+            <li><a href="./opendynamo.html" class="footer-link">OpenDynamo Monograph</a></li>
+            <li><a href="./facilities.html" class="footer-link">Wind Tunnel Specifications</a></li>
+            <li><a href="https://github.com/drunkseal/opendynamo" target="_blank" class="footer-link">OpenDynamo GitHub</a></li>
+            <li><a href="https://github.com/drunkseal/dana" target="_blank" class="footer-link">Website Repository</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Affiliations</div>
+          <ul class="footer-links">
+            <li><a href="https://aut.ac.ir" target="_blank" class="footer-link">Amirkabir University of Tech</a></li>
+            <li><a href="https://aero.aut.ac.ir" target="_blank" class="footer-link">Aerospace Engineering Dept</a></li>
+            <li><span class="footer-link">ASA Aircraft Corporation</span></li>
+            <li><span class="footer-link">PANHA Helicopter Company</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2012–2026 DANA Aerodynamics Laboratory, Amirkabir University of Technology. All rights reserved.
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">
+          Designed for High-Order Aerodynamics &amp; Scientific Computing
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay" id="image-modal">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close Modal">&times;</button>
+      <div class="modal-img-container">
+        <img id="modal-img" src="" alt="Enlarged Visual">
+      </div>
+      <div class="modal-text-padding">
+        <h3 id="modal-title" style="font-size: 1.35rem; margin-bottom: 0.5rem;"></h3>
+        <p id="modal-desc" style="color: var(--text-secondary); font-size: 0.925rem; line-height: 1.6;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="./assets/opendynamo/stats_data.js"></script>
+  <script src="./assets/js/simulator.js"></script>
+  <script src="./assets/js/charts.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
